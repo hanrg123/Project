@@ -70,9 +70,7 @@ body {
   text-transform: uppercase;
   letter-spacing: .2em;
 }
-.two .form-group label {
-  color: #FFFFFF;
-}
+
 .form-group input {
   outline: none;
   display: block;
@@ -92,12 +90,6 @@ body {
 }
 .form-group input:focus {
   color: rgba(0, 0, 0, 0.8);
-}
-.two .form-group input {
-  color: #FFFFFF;
-}
-.two .form-group input:focus {
-  color: #FFFFFF;
 }
 .form-group button {
   outline: none;
@@ -141,46 +133,6 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-.two .form-header h1 {
-  position: relative;
-  z-index: 40;
-  color: #FFFFFF;
-}
-
-.pen-footer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 600px;
-  margin: 20px auto 100px;
-}
-.pen-footer a {
-  color: #FFFFFF;
-  font-size: 12px;
-  text-decoration: none;
-  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
-.pen-footer a .material-icons {
-  width: 12px;
-  margin: 0 5px;
-  vertical-align: middle;
-  font-size: 12px;
-}
-
-.cp-fab {
-  background: #FFFFFF !important;
-  color: #4285F4 !important;
-}
 
 </style>
 </head>
@@ -188,25 +140,41 @@ body {
 
 <!-- Form-->
 <div class="form">
-  <div class="form-toggle"></div>
   <div class="form-panel one">
     <div class="form-header">
-      <h1>Account Login</h1>
+      <h1>상품등록페이지</h1>
     </div>
     <div class="form-content">
       <form>
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username">상품명</label>
           <input type="text" id="username" name="username" required="required"/>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">가격</label>
           <input type="password" id="password" name="password" required="required"/>
         </div>
         <div class="form-group">
+        	<label for="password">카테고리</label>
+        </div>
+        	<select style="width: 450px; height: 50px;">
+        		<option>1</option>
+        		<option>1</option>
+        		<option>1</option>
+        		<option>1</option>
+        		<option>1</option>
+        	</select>
+        	<div style="height: 10px;"></div>
+        <div class="form-group">
+        	<label for="password">상품개수</label>
+          	<input type="text" id="Address" name="Address" required="required"/>
         </div>
         <div class="form-group">
-          <button type="submit">Log In</button>
+        	<label for="password">상품사진</label>
+          	<input type="file" id="tel" name="tel" required="required"/>
+        </div>
+        <div class="form-group">
+          <button type="submit">상품 등록</button>
         </div>
       </form>
     </div>

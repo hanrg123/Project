@@ -70,9 +70,7 @@ body {
   text-transform: uppercase;
   letter-spacing: .2em;
 }
-.two .form-group label {
-  color: #FFFFFF;
-}
+
 .form-group input {
   outline: none;
   display: block;
@@ -92,12 +90,6 @@ body {
 }
 .form-group input:focus {
   color: rgba(0, 0, 0, 0.8);
-}
-.two .form-group input {
-  color: #FFFFFF;
-}
-.two .form-group input:focus {
-  color: #FFFFFF;
 }
 .form-group button {
   outline: none;
@@ -141,46 +133,6 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-.two .form-header h1 {
-  position: relative;
-  z-index: 40;
-  color: #FFFFFF;
-}
-
-.pen-footer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 600px;
-  margin: 20px auto 100px;
-}
-.pen-footer a {
-  color: #FFFFFF;
-  font-size: 12px;
-  text-decoration: none;
-  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
-.pen-footer a .material-icons {
-  width: 12px;
-  margin: 0 5px;
-  vertical-align: middle;
-  font-size: 12px;
-}
-
-.cp-fab {
-  background: #FFFFFF !important;
-  color: #4285F4 !important;
-}
 
 </style>
 </head>
@@ -188,10 +140,9 @@ body {
 
 <!-- Form-->
 <div class="form">
-  <div class="form-toggle"></div>
   <div class="form-panel one">
     <div class="form-header">
-      <h1>Account Login</h1>
+      <h1>Account Join</h1>
     </div>
     <div class="form-content">
       <form>
@@ -204,9 +155,19 @@ body {
           <input type="password" id="password" name="password" required="required"/>
         </div>
         <div class="form-group">
+        	<label for="password">Age</label>
+          	<input type="text" id="age" name="age" required="required"/>
         </div>
         <div class="form-group">
-          <button type="submit">Log In</button>
+        	<label for="password">Address</label>
+          	<input type="text" id="Address" name="Address" required="required"/>
+        </div>
+        <div class="form-group">
+        	<label for="password">Tel</label>
+          	<input type="tel" id="tel" name="tel" required="required"/>
+        </div>
+        <div class="form-group">
+          <button type="submit">Join</button>
         </div>
       </form>
     </div>

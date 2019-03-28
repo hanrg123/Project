@@ -15,29 +15,6 @@ body {
 	padding: 0;
 	width: 100%;
 }
-
-
-/*sectionWrap*/
-
-#sectionWrap {width:150px; margin:0 auto; padding:80px 0 60px;}
-#sectionWrap.on{padding-top:128px;}
-
-#sectionWrap > div{margin-bottom:150px;}
-#sectionWrap .section01{height:300px;}
-#sectionWrap .section01 .cont{width:153px; height:600px; overflow:hidden; float:left; position:relative; border-left:solid 1px #f0ede7;}
-#sectionWrap .section01 .cont div:first-child{border-left:none;}
-#sectionWrap .section01 .cont .bg{position:absolute; top:0; left:0;}
-/*#sectionWrap .section01 .cont .bg img {filter:alpha(opacity=30);opacity:0.3}
-#sectionWrap .section01 .cont.on .bg img{filter:alpha(opacity=100);opacity:1}*/
-#sectionWrap .section01 .cont.on{width:413px;}
-#sectionWrap .section01 .cont.on .layer{display:none}
-#sectionWrap .section01 .cont .title_off, #sectionWrap .section01 .cont .title_on{position:relative;display:block;width:153px;text-align:center;z-index:9999;padding-top:70px;}
-#sectionWrap .section01 .cont .title_on{width:413px;display:none}
-#sectionWrap .section01 .cont.on .title_off{display:none;}
-#sectionWrap .section01 .cont.on .title_on{display:block;}
-#sectionWrap .section01 .cont .layer{display:block; width:413px; height:600px; position:absolute; left:0; top:0; z-index:1; background:#333333; filter:alpha(opacity=90); opacity:0.9;}
-/*#sectionWrap .section01 .cont .layer{position:absolute;left:0;top:0px;width:153px;height:554px;background:black;opacity:0.2}*/
-
 /* 메뉴바 */
 .menubar {
 	border: none;
@@ -56,7 +33,7 @@ body {
 	height: 50px;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 0px;
 }
 
 .menubar li {
@@ -220,15 +197,15 @@ h2 {
 </head>
 <body>
 <div class="d7" >
+<div style="height: 10px;"></div>
 <h2>SHOPSHOPSHOP</h2>
-<form>
-  <input type="text" placeholder="검색어 입력">
-  <button type="submit"></button>
-</form>
+		<form>
+			<input type="text" placeholder="검색어 입력">
+			<button type="submit"></button>
+		</form>
 </div>
-<div style="height: 30px;"></div>
 	<div class="menubar">
-		<ul>
+		<ul style="text-align: center; padding-left:700px;">
 			<li><a href="#">Home</a></li>
 			<li><a href="#" id="current">TOP</a>
 				<ul>
@@ -249,59 +226,9 @@ h2 {
 			<li><a href="#">OUTER</a></li>
 			<li><a href="#">ACC</a></li>
 			<li ><a href="#">SHOSE</a></li>
+			<li style="padding-left: 450px"><a href="#">LOGIN</a></li>
+			<li ><a href="#">JOIN</a></li>
 		</ul>
 	</div>
-	<div id="section">			
-						
-		<div class="section">
-			<div class="cont on">					
-				<span class="bg"><img src="img/01.jpg" alt="" /></span>	
-                <span class="title_off"><img src="img/cont_title01_out.png" alt="" /></span>			
-				<span class="title_on"><a href="https://www.instagram.com/lamf_k/"><img src="img/cont_title_on.png" alt="" /></a></span>														
-				<span class="layer"></span>
-			</div>
-			<div class="cont">					
-				<span class="bg"><img src="img/02.jpg" alt="" /></span>	
-                <span class="title_off"><img src="img/cont_title02_out.png" alt="" /></span>			
-				<span class="title_on"><a href="https://www.instagram.com/lamf_k/"><img src="img/cont_title_on.png" alt="" /></a></span>	                    									
-				<span class="layer"></span>
-			</div>
-			<div class="cont">					
-				<span class="bg"><img src="img/03.jpg" alt="" /></span>	
-                <span class="title_off"><img src="img/cont_title03_out.png" alt="" /></span>			
-				<span class="title_on"><a href="https://www.instagram.com/lamf_k/"><img src="img/cont_title_on.png" alt="" /></a></span>	                    				
-				<span class="layer"></span>
-			</div>
-			<div class="cont">										
-				<span class="bg"><img src="img/04.jpg" alt="" /></span>	
-                <span class="title_off"><img src="img/cont_title04_out.png" alt="" /></span>			
-				<span class="title_on"><a href="https://www.instagram.com/lamf_k/"><img src="img/cont_title_on.png" alt="" /></a></span>	                    			
-				<span class="layer"></span>						
-			</div>
-			<div class="cont">										
-				<span class="bg"><img src="img/05.jpg" alt="" /></span> 
-                <span class="title_off"><img src="img/cont_title05_out.png" alt="" /></span>			
-				<span class="title_on"><a href="https://www.instagram.com/lamf_k/"><img src="img/cont_title_on.png" alt="" /></a></span>	                    					
-				<span class="layer"></span>
-			</div>
-		</div>
-	</div>	
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script>
-
-$(function() {
-
-	$(".section .cont").mouseover(function() {					
-		$(".section .cont").stop().animate({width:"100px"}, 500, 'easeOutCirc').removeClass("on");
-		$(this).stop().animate({width:"200px"}, 500, 'easeOutCirc').addClass("on");							
-	});
-
-});
-
-</script>
 </body>
 </html>
