@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="section.css" media="all">
+
+</head>
+
+<body>
+
+	<div id="sectionWrap">
+
+		<!-- section01 -->
+		<div class="section01 section_nav">
+			<div class="cont on">
+				<span class="bg"><a href="#"><img src="img/01.jpg" alt="" /></a></span>
+				<span class="title_off"><img src="img/cont_title01_out.png"
+					alt="" /></span> <span class="title_on"><a href="#"><img
+						src="img/cont_title_on.png" alt="" /></a></span> <span class="layer"></span>
+			</div>
+			<div class="cont">
+				<span class="bg"><a href="#"><img src="img/02.jpg" alt="" /></a></span>
+				<span class="title_off"><img src="img/cont_title02_out.png"
+					alt="" /></span> <span class="title_on"><a href="#"><img
+						src="img/cont_title_on.png" alt="" /></a></span> <span class="layer"></span>
+			</div>
+			<div class="cont">
+				<span class="bg"><a href="#"><img src="img/03.jpg" alt="" /></a></span>
+				<span class="title_off"><img src="img/cont_title03_out.png"
+					alt="" /></span> <span class="title_on"><a href="#"><img
+						src="img/cont_title_on.png" alt="" /></a></span> <span class="layer"></span>
+			</div>
+			<div class="cont">
+				<span class="bg"><a href="#"><img src="img/04.jpg" alt="" /></a></span>
+				<span class="title_off"><img src="img/cont_title04_out.png"
+					alt="" /></span> <span class="title_on"><a href="#"><img
+						src="img/cont_title_on.png" alt="" /></a></span> <span class="layer"></span>
+			</div>
+			<div class="cont">
+				<span class="bg"><a href="#"><img src="img/05.jpg" alt="" /></a></span>
+				<span class="title_off"><img src="img/cont_title05_out.png"
+					alt="" /></span> <span class="title_on"><a href="#"><img
+						src="img/cont_title_on.png" alt="" /></a></span> <span class="layer"></span>
+			</div>
+		</div>
+		<!-- // section01 -->
+
+	</div>
+
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="jquery.easing.1.3"></script>
+	<script>
+
+$(function(){
+
+	$(".section01 .cont").mouseover(function(){					
+		$(".section01 .cont").stop().animate({width:"153px"}, 900, 'easeOutCirc' ).removeClass("on");
+		$(this).stop().animate({width:"413px"}, 900, 'easeOutCirc' ).addClass("on");							
+	});
+
+
+});
+
+</script>
+
+
+</body>
+</html>

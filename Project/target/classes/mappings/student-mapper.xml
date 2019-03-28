@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="studentMapper">
+	<resultMap type="com.spring.biz.vo.ClassVO" id="class">
+		<result column="ClASS_CODE" 	property="classCode"/>
+		<result column="ClASS_NAME" 	property="className"/>
+	</resultMap>
+	
+	<resultMap type="com.spring.biz.vo.StudentVO" id="student">
+		<result column="STUDENT_NUM" 	property="studentNum"/>
+		<result column="STUDENT_NAME" 	property="studentName"/>
+		<result column="KOR_SCORE" 		property="korScore"/>
+		<result column="ENG_SCORE" 		property="engScore"/>
+		<result column="MATH_SCORE" 	property="mathScore"/>
+		<result column="ClASS_CODE" 	property="classCode"/>
+		<result column="ClASS_NAME" 	property="className"/>
+		<!-- StudentVO에 StudentInfoVO를 선언해주고 아래처럼 불러 올수 있다. -->
+		<result column="STUDENT_ADDR" 	property="studentInfoVO.studentAddr"/>
+		<result column="STUDENT_AGE" 	property="studentInfoVO.studentAge"/>
+		<result column="BIRTH_DAY" 		property="studentInfoVO.birthDay"/>
+	</resultMap>
+	
+	<resultMap type="com.spring.biz.vo.StudentInfoVO" id="studentInfo">
+		<result column="STUDENT_NUM" 	property="studentNum"/>
+		<result column="STUDENT_ADDR" 	property="studentAddr"/>
+		<result column="STUDENT_AGE" 	property="studentAge"/>
+		<result column="BIRTH_DAY" 		property="birthDay"/>
+	</resultMap>
+		
+	<select id="selectClassList" resultMap="class">
+		SELECT CLASS_CODE
+			, CLASS_NAME
+		FROM CLASS_INFO
+		ORDER BY CLASS_CODE
+	</select>
+	
+	<select id="selectStudentList" resultMap="student">
+		SELECT STUDENT_NUM
+			, STUDENT_NAME
+			, (SELECT CLASS_NAME
+				FROM CLASS_INFO
+				WHERE CLASS_CODE = A.CLASS_CODE) AS CLASS_NAME
+		FROM SPRING_STUDENT A
+		WHERE CLASS_CODE =
+		<choose>
+			<when test="classCode == 0">
+				1
+			</when>
+			<otherwise>
+				#{classCode}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="selectStudent" resultMap="student">
+		SELECT A.STUDENT_NUM
+		    , STUDENT_NAME
+		    , KOR_SCORE
+		    , ENG_SCORE
+		    , MATH_SCORE
+		    , CLASS_CODE
+		    , STUDENT_ADDR
+		    , STUDENT_AGE
+		    , TO_CHAR(BIRTH_DAY,'YYYY-MM-DD') AS BIRTH_DAY
+		FROM SPRING_STUDENT A, STUDENT_INFO B
+		WHERE A.STUDENT_NUM = B.STUDENT_NUM
+		AND A.STUDENT_NUM = #{studentNum}
+	</select>
+	
+	<insert id="insertStudent">
+		INSERT INTO SPRING_STUDENT(
+			STUDENT_NUM
+			, STUDENT_NAME
+			, CLASS_CODE
+		) VALUES(
+			(SELECT NVL(MAX(STUDENT_NUM) + 1, 1) FROM SPRING_STUDENT)
+			, #{studentName}
+			, (SELECT CLASS_CODE 
+				FROM CLASS_INFO
+				WHERE CLASS_NAME = #{className})
+		)
+	</insert>
+	
+	<insert id="insertStudentInfo">
+		INSERT INTO STUDENT_INFO(
+			STUDENT_NUM
+		) VALUES(
+			(SELECT NVL(MAX(STUDENT_NUM) + 1, 1) FROM STUDENT_INFO)
+		)
+	</insert>
+	
+	<update id="updateStudent">
+		UPDATE SPRING_STUDENT
+		SET
+		KOR_SCORE = #{korScore}	
+		, ENG_SCORE = #{engScore}
+		, MATH_SCORE = #{mathScore}
+		WHERE STUDENT_NUM = #{studentNum}
+	</update>
+	
+	<update id="updateStudentInfo">
+		UPDATE STUDENT_INFO
+		SET
+		STUDENT_ADDR = #{studentAddr}
+		, STUDENT_AGE = #{studentAge}
+		, BIRTH_DAY = TO_DATE(#{birthDay}, 'YYYY-MM-DD')
+		WHERE STUDENT_NUM = #{studentNum}
+	</update>
+	
+	<delete id="deleteStudent">
+		DELETE SPRING_STUDENT
+		WHERE STUDENT_NUM IN 
+		<foreach collection="numList" item="studentNum" separator="," open="("  close=")">
+			#{studentNum}
+		</foreach>
+	</delete>
+	
+	<delete id="deleteStudentInfo">
+		DELETE STUDENT_INFO
+		WHERE STUDENT_NUM IN
+		<foreach collection="numList" item="studentNum" separator="," open="("  close=")">
+			#{studentNum}
+		</foreach>
+	</delete>
+	
+</mapper>
