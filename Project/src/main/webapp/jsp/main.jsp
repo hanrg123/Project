@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Insert title</title>
 <style type="text/css">
 /*이미지슬라이드*/
 
