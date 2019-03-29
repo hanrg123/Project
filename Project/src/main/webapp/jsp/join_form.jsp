@@ -167,6 +167,10 @@ body {
           	<input type="tel" id="tel" name="tel" required="required"/>
         </div>
         <div class="form-group">
+        	<label for="password">Tel</label>
+          	<input type="tel" id="tel" name="tel" required="required"/>
+        </div>
+        <div class="form-group">
           <button type="submit">Join</button>
         </div>
       </form>
