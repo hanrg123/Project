@@ -198,7 +198,7 @@ h2 {
 <body>
 <div class="d7" >
 <div style="height: 10px;"></div>
-<h2>SHOPSHOPSHOP</h2>
+<h2>안녕하세요SHOP</h2>
 		<form>
 			<input type="text" placeholder="검색어 입력">
 			<button type="submit"></button>
