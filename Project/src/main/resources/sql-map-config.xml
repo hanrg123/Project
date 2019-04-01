@@ -5,8 +5,7 @@
 <!-- 마이바티스 연결 설정 -->
 <configuration>
 	<mappers>
-		<mapper resource="/mappings/user-mapper.xml"/>
-		<mapper resource="/mappings/board-mapper.xml"/>
-		<mapper resource="/mappings/student-mapper.xml"/>
+		<mapper resource="/mappings/member-mapper.xml"/>
+		<mapper resource="/mappings/item-mapper.xml"/>
 	</mappers>
 </configuration>

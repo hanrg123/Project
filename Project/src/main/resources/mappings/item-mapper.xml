@@ -3,7 +3,7 @@
 
 <mapper namespace="boardMapper">
 	<!-- result와 쿼리문이 들어간다. -->
-	<resultMap type="com.spring.biz.vo.BoardVO" 	id="board">
+	<resultMap type="com.spring.biz.vo.ItemVO" 	id="item">
     	<result column="SEQ" 			property="seq"/>
     	<result column="TITLE" 			property="title"/>
     	<result column="WRITER" 		property="writer"/>

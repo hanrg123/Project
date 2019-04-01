@@ -226,7 +226,7 @@ h2 {
 			<li><a href="#">OUTER</a></li>
 			<li><a href="#">ACC</a></li>
 			<li ><a href="#">SHOSE</a></li>
-			<li style="padding-left: 450px"><a href="#">LOGIN</a></li>
+			<li style="padding-left: 450px"><a href="loginPage.do">LOGIN</a></li>
 			<li ><a href="#">JOIN</a></li>
 		</ul>
 	</div>
