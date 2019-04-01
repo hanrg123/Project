@@ -145,30 +145,34 @@ body {
       <h1>Account Join</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form action="join.do" method="post">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required="required"/>
+          <label for="username">ID</label>
+          <input type="text" id="memberId" name="memberId" required="required"/>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required="required"/>
+          <input type="password" id="memberPass" name="memberPass" required="required"/>
         </div>
         <div class="form-group">
-        	<label for="password">Age</label>
-          	<input type="text" id="age" name="age" required="required"/>
+          <label for="Username">Username</label>
+          <input type="text" id="memberName" name="memberName" required="required"/>
         </div>
         <div class="form-group">
-        	<label for="password">Address</label>
-          	<input type="text" id="Address" name="Address" required="required"/>
+           <label for="Age">Age</label>
+             <input type="text" id="memberAge" name="memberAge" required="required"/>
         </div>
         <div class="form-group">
-        	<label for="password">Tel</label>
-          	<input type="tel" id="tel" name="tel" required="required"/>
+           <label for="Address">Address</label>
+             <input type="text" id="memberAddr" name="memberAddr" required="required"/>
         </div>
         <div class="form-group">
-        	<label for="password">Tel</label>
-          	<input type="tel" id="tel" name="tel" required="required"/>
+           <label for="Tel">Tel</label>
+             <input type="tel" id="memberPhone" name="memberPhone" required="required"/>
+        </div>
+        <div class="form-group">
+           <label for="BirthDay">BirthDay</label>
+             <input type="date" id="memberBirthday" name="memberBirthday" required="required"/>
         </div>
         <div class="form-group">
           <button type="submit">Join</button>

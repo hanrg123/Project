@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="boardMapper">
+<mapper namespace="itemMapper">
 	<!-- result와 쿼리문이 들어간다. -->
 	<resultMap type="com.spring.biz.vo.ItemVO" 	id="item">
     	<result column="SEQ" 			property="seq"/>
@@ -12,60 +12,4 @@
     	<result column="READ_CNT" 		property="readCnt"/>
 	</resultMap>
 	
-	<select id="selectBoardList" resultMap="board">
-		SELECT SEQ
-			, TITLE
-			, WRITER
-			, CONTENT
-			, REG_DATE
-			, READ_CNT
-		FROM SPRING_BOARD
-		ORDER BY SEQ DESC
-	</select>
-	
-	<insert id="insertBoard">
-		INSERT INTO SPRING_BOARD(
-			SEQ
-			, TITLE
-			, CONTENT
-			, WRITER
-		) VALUES (
-			(SELECT NVL(MAX(SEQ) +1 ,1) FROM SPRING_BOARD)
-			, #{title}
-			, #{content}
-			, #{writer}
-		)
-	</insert>
-	
-	<select id="selectBoard" resultMap="board">
-		SELECT SEQ
-				, TITLE
-				, WRITER
-				, CONTENT
-				, REG_DATE
-				, READ_CNT
-		FROM SPRING_BOARD
-		WHERE SEQ = #{seq}
-	</select>
-	
-	<delete id="deleteBoard">
-		DELETE SPRING_BOARD
-		WHERE SEQ = #{seq}
-	</delete>
-	
-	<update id="updateBoard">
-		UPDATE SPRING_BOARD
-		SET
-		TITLE = #{title}
-		, WRITER = #{writer}
-		, CONTENT = #{content]
-		WHERE SEQ = #{seq]
-	</update>
-	
-	<update id="updateReadCnt">
-		UPDATE SPRING_BOARD
-		SET READ_CNT = READ_CNT + 1
-		WHERE SEQ= #{seq}
-	</update>
-
 </mapper>

@@ -30,18 +30,15 @@ public class MainController {
 	@RequestMapping(value = "/login.do")
 	public String login(MemberVO vo, HttpSession session) {
 		MemberVO memberVO = memberService.login(vo);
-		if(memberVO!= null) {
-			session.setAttribute("MemberId", memberVO.getMemberId());
-			return "/jsp/login_result.jsp";
-		}else {
-			return "/jsp/login_result.jsp";
-			}
-				
+		if(memberVO != null) {
+			session.setAttribute("memberId", memberVO.getMemberId());
 		}
+			return "/jsp/login_result.jsp";
+	}
 	//회원가입 페이지
 		@RequestMapping(value = "/joinPage.do")
 		public String joinPage() {
-			return"/jsp/join.jsp";
+			return"/jsp/join_form.jsp";
 		}
 	//회원가입
 	@RequestMapping(value = "/join.do")

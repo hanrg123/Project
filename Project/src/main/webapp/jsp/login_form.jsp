@@ -194,14 +194,14 @@ body {
       <h1>Account Login</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form action="login.do" method="post">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" required="required"/>
+          <input type="text" id="memberId" name="memberId" required="required"/>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required="required"/>
+          <input type="password" id="memberPass" name="memberPass" required="required"/>
         </div>
         <div class="form-group">
         </div>
